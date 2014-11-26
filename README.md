@@ -35,4 +35,4 @@ prints `Hello World!\n`
 
 ## ***
 
-_ Our hearts burn for [Mike Brown](http://en.wikipedia.org/wiki/Shooting_of_Michael_Brown) and for every victim of [racism](http://en.wikipedia.org/wiki/Black_genocide) and [police brutality](http://en.wikipedia.org/wiki/Police_brutality#Russia) around the globe. No forgiveness! _
+*Our hearts burn for [Mike Brown](http://en.wikipedia.org/wiki/Shooting_of_Michael_Brown) and for every victim of [racism](http://en.wikipedia.org/wiki/Black_genocide) and [police brutality](http://en.wikipedia.org/wiki/Police_brutality#Russia) around the globe. No forgiveness!*
