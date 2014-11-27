@@ -9,7 +9,7 @@
 #ifndef MockingJSON_mocking_tests_helper_h
 #define MockingJSON_mocking_tests_helper_h
 
-#include <tap.h>
+#include "tap.h"
 #include "mocking_json.h"
 
 #define TEST_CASE(TEST_CASE_NAME) \
