@@ -31,9 +31,9 @@ atom *atom_from_json_token(jsmntok_t token,  const char* json_string) {
         case JSMN_PRIMITIVE:
             errno = 0;
             val = strtod(valueBuff, &p);
-            if (errno != 0 || valueBuff == p || *p != 0)
+            if (errno != 0 || valueBuff == p || *p != 0) {
                 atom = atom_new_nil();
-            if (floor(val)==val) {
+            } else if (floorl(val)==val) {
                 long longValue = (long)val;
                 atom = atom_new(&longValue, atomLong);
                 
@@ -111,7 +111,6 @@ void *sexpression_from_json_token(jsmntok_t t[1024], const char* json_string, in
 }
 
 conscell *sexpression_from_json_string(const char* json_string) {
-    int i;
     int r;
     jsmn_parser p;
     jsmntok_t t[1024];
@@ -162,7 +161,7 @@ const char *sexpression_to_json_string(conscell *exp) {
         } else {
             const char * resChild = sexpression_to_json_string(conscell_car(exp));
             sprintf(res+strlen(res), "%s", resChild);
-            free(resChild);
+            free((void *)resChild);
         }
         
         exp = conscell_cdr(exp);

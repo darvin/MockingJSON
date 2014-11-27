@@ -8,7 +8,7 @@
 
 #include "mocking_tests_helper.h"
 
-
+#include <string.h>
 
 
 
@@ -67,7 +67,7 @@ bool mocking_test_filename(const char *filename) {
 TEST_CASE(progs)
 TEST(SimpleProgram) {
     todo();
-    ok(mocking_json_run("[\"+\", 2, 4]")==6, "Pass");
+    ok((int)mocking_json_run("[\"+\", 2, 4]")==6, "Pass");
     end_todo;
 }
 

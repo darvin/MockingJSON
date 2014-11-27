@@ -60,7 +60,7 @@ TEST(SExpressionsSanity) {
     for (int i=0; i<maxExpr; i++) {
         const char *expr = expessions[i];
         conscell *c = sexpression_from_json_string(expr);
-        char *exprRev = sexpression_to_json_string(c);
+        const char *exprRev = sexpression_to_json_string(c);
         is(expr, exprRev, "Serialized expression have to be as deserialized");
         
         
