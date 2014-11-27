@@ -67,7 +67,8 @@ atom *atom_new(void *value, atomType type) {
             break;
         case atomString:
             a->stringValue = malloc(strlen(value)+1);
-            strlcpy(a->stringValue, value, strlen(value)+1);
+            strncpy(a->stringValue, value, strlen(value));
+            a->stringValue[strlen(value)] = '\0';
             break;
         default:
             break;

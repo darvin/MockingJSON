@@ -21,16 +21,18 @@ bool is_result_equal_to_expected_from_filename(void *result, const char *filenam
     
     char *typeName = malloc(typeNameSize+1);
     
-    strlcpy(typeName, typeNameStart, typeNameSize+1);
+    strncpy(typeName, typeNameStart, typeNameSize);
+    typeName[typeNameSize] = '\0';
     
+
     
     char *valueStart = typeNameStart + typeNameSize + 1;
     size_t valueSize = strstr(filename, ".json") - valueStart;
     
     char *valueStr = malloc(valueSize+1);
     
-    strlcpy(valueStr, valueStart, valueSize+1);
-    
+    strncpy(valueStr, valueStart, valueSize);
+    valueStr[valueSize] = '\0';
     
     bool resultIsEqual = false;
     

@@ -17,8 +17,11 @@
 
 
 atom *atom_from_json_token(jsmntok_t token,  const char* json_string) {
-    char * valueBuff = malloc(token.end - token.start);
-    strlcpy(valueBuff, json_string + token.start, token.end - token.start+1);
+    size_t valueSize = token.end - token.start;
+    char * valueBuff = malloc(valueSize +1);
+    strncpy(valueBuff, json_string + token.start, valueSize);
+    valueBuff[valueSize] = '\0';
+    
     atom *atom = NULL;
 //    printf("PROCESSING ATOM %s length %d\n", valueBuff, token.end - token.start);
     
