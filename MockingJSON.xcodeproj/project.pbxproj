@@ -1,0 +1,396 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		571E9BA21A27051300E56E94 /* jsmn.c in Sources */ = {isa = PBXBuildFile; fileRef = 571E9B531A27051300E56E94 /* jsmn.c */; };
+		571E9BA81A27051300E56E94 /* mocking_conscell.c in Sources */ = {isa = PBXBuildFile; fileRef = 571E9B5C1A27051300E56E94 /* mocking_conscell.c */; };
+		571E9BAA1A27051300E56E94 /* mocking_json.c in Sources */ = {isa = PBXBuildFile; fileRef = 571E9B5F1A27051300E56E94 /* mocking_json.c */; };
+		571E9BAC1A27051300E56E94 /* mocking_sexpressions.c in Sources */ = {isa = PBXBuildFile; fileRef = 571E9B621A27051300E56E94 /* mocking_sexpressions.c */; };
+		571E9BC51A27051300E56E94 /* tap.c in Sources */ = {isa = PBXBuildFile; fileRef = 571E9B911A27051300E56E94 /* tap.c */; };
+		571E9BC71A27051300E56E94 /* mocking_tests.c in Sources */ = {isa = PBXBuildFile; fileRef = 571E9B941A27051300E56E94 /* mocking_tests.c */; };
+		571E9BCE1A2705FE00E56E94 /* test_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 571E9B9C1A27051300E56E94 /* test_parser.c */; };
+		571E9BCF1A2705FE00E56E94 /* test_progs.c in Sources */ = {isa = PBXBuildFile; fileRef = 571E9B9E1A27051300E56E94 /* test_progs.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		571E9B441A2704D900E56E94 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		571E9B461A2704D900E56E94 /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
+		571E9B531A27051300E56E94 /* jsmn.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jsmn.c; sourceTree = "<group>"; };
+		571E9B541A27051300E56E94 /* jsmn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsmn.h; sourceTree = "<group>"; };
+		571E9B5C1A27051300E56E94 /* mocking_conscell.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mocking_conscell.c; sourceTree = "<group>"; };
+		571E9B5D1A27051300E56E94 /* mocking_conscell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mocking_conscell.h; sourceTree = "<group>"; };
+		571E9B5F1A27051300E56E94 /* mocking_json.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mocking_json.c; sourceTree = "<group>"; };
+		571E9B601A27051300E56E94 /* mocking_json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mocking_json.h; sourceTree = "<group>"; };
+		571E9B621A27051300E56E94 /* mocking_sexpressions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mocking_sexpressions.c; sourceTree = "<group>"; };
+		571E9B631A27051300E56E94 /* mocking_sexpressions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mocking_sexpressions.h; sourceTree = "<group>"; };
+		571E9B911A27051300E56E94 /* tap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tap.c; sourceTree = "<group>"; };
+		571E9B921A27051300E56E94 /* tap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tap.h; sourceTree = "<group>"; };
+		571E9B941A27051300E56E94 /* mocking_tests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mocking_tests.c; sourceTree = "<group>"; };
+		571E9B971A27051300E56E94 /* mocking_tests_helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mocking_tests_helper.h; sourceTree = "<group>"; };
+		571E9B9A1A27051300E56E94 /* !hello_world=(void*)NULL.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "!hello_world=(void*)NULL.json"; sourceTree = "<group>"; };
+		571E9B9B1A27051300E56E94 /* fibbonacci=(int)233.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "fibbonacci=(int)233.json"; sourceTree = "<group>"; };
+		571E9B9C1A27051300E56E94 /* test_parser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test_parser.c; sourceTree = "<group>"; };
+		571E9B9E1A27051300E56E94 /* test_progs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test_progs.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		571E9B431A2704D900E56E94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		571E9B471A2704D900E56E94 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				571E9B461A2704D900E56E94 /* test */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		571E9B4E1A27051300E56E94 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				571E9B4F1A27051300E56E94 /* jsmn */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		571E9B4F1A27051300E56E94 /* jsmn */ = {
+			isa = PBXGroup;
+			children = (
+				571E9B531A27051300E56E94 /* jsmn.c */,
+				571E9B541A27051300E56E94 /* jsmn.h */,
+			);
+			path = jsmn;
+			sourceTree = "<group>";
+		};
+		571E9B5B1A27051300E56E94 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				571E9B5C1A27051300E56E94 /* mocking_conscell.c */,
+				571E9B5D1A27051300E56E94 /* mocking_conscell.h */,
+				571E9B5F1A27051300E56E94 /* mocking_json.c */,
+				571E9B601A27051300E56E94 /* mocking_json.h */,
+				571E9B621A27051300E56E94 /* mocking_sexpressions.c */,
+				571E9B631A27051300E56E94 /* mocking_sexpressions.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		571E9B651A27051300E56E94 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				571E9B661A27051300E56E94 /* libs */,
+				571E9B941A27051300E56E94 /* mocking_tests.c */,
+				571E9B971A27051300E56E94 /* mocking_tests_helper.h */,
+				571E9B991A27051300E56E94 /* progs */,
+				571E9B9C1A27051300E56E94 /* test_parser.c */,
+				571E9B9E1A27051300E56E94 /* test_progs.c */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
+		571E9B661A27051300E56E94 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				571E9B671A27051300E56E94 /* libtap */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		571E9B671A27051300E56E94 /* libtap */ = {
+			isa = PBXGroup;
+			children = (
+				571E9B911A27051300E56E94 /* tap.c */,
+				571E9B921A27051300E56E94 /* tap.h */,
+			);
+			path = libtap;
+			sourceTree = "<group>";
+		};
+		571E9B991A27051300E56E94 /* progs */ = {
+			isa = PBXGroup;
+			children = (
+				571E9B9A1A27051300E56E94 /* !hello_world=(void*)NULL.json */,
+				571E9B9B1A27051300E56E94 /* fibbonacci=(int)233.json */,
+			);
+			path = progs;
+			sourceTree = "<group>";
+		};
+		576BD7E21A26F6F10046A99C = {
+			isa = PBXGroup;
+			children = (
+				571E9B4E1A27051300E56E94 /* libs */,
+				571E9B5B1A27051300E56E94 /* src */,
+				571E9B651A27051300E56E94 /* tests */,
+				571E9B471A2704D900E56E94 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		576BD7E71A26F6F10046A99C /* MockingJSON */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = test;
+			buildConfigurationList = 576BD7EA1A26F6F10046A99C /* Build configuration list for PBXLegacyTarget "MockingJSON" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = MockingJSON;
+			passBuildSettingsInEnvironment = 1;
+			productName = MockingJSON;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		571E9B451A2704D900E56E94 /* test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 571E9B4B1A2704D900E56E94 /* Build configuration list for PBXNativeTarget "test" */;
+			buildPhases = (
+				571E9B421A2704D900E56E94 /* Sources */,
+				571E9B431A2704D900E56E94 /* Frameworks */,
+				571E9B441A2704D900E56E94 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = test;
+			productName = test;
+			productReference = 571E9B461A2704D900E56E94 /* test */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		576BD7E31A26F6F10046A99C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Sergey Klimov";
+				TargetAttributes = {
+					571E9B451A2704D900E56E94 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					576BD7E71A26F6F10046A99C = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = 576BD7E61A26F6F10046A99C /* Build configuration list for PBXProject "MockingJSON" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 576BD7E21A26F6F10046A99C;
+			productRefGroup = 571E9B471A2704D900E56E94 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				576BD7E71A26F6F10046A99C /* MockingJSON */,
+				571E9B451A2704D900E56E94 /* test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		571E9B421A2704D900E56E94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				571E9BAA1A27051300E56E94 /* mocking_json.c in Sources */,
+				571E9BC71A27051300E56E94 /* mocking_tests.c in Sources */,
+				571E9BA21A27051300E56E94 /* jsmn.c in Sources */,
+				571E9BC51A27051300E56E94 /* tap.c in Sources */,
+				571E9BCE1A2705FE00E56E94 /* test_parser.c in Sources */,
+				571E9BA81A27051300E56E94 /* mocking_conscell.c in Sources */,
+				571E9BAC1A27051300E56E94 /* mocking_sexpressions.c in Sources */,
+				571E9BCF1A2705FE00E56E94 /* test_progs.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		571E9B4C1A2704D900E56E94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs/jsmn",
+					"$(PROJECT_DIR)/tests/libs/libtap",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		571E9B4D1A2704D900E56E94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs/jsmn",
+					"$(PROJECT_DIR)/tests/libs/libtap",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		576BD7E81A26F6F10046A99C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		576BD7E91A26F6F10046A99C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		576BD7EB1A26F6F10046A99C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUGGING_SYMBOLS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		576BD7EC1A26F6F10046A99C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		571E9B4B1A2704D900E56E94 /* Build configuration list for PBXNativeTarget "test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				571E9B4C1A2704D900E56E94 /* Debug */,
+				571E9B4D1A2704D900E56E94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		576BD7E61A26F6F10046A99C /* Build configuration list for PBXProject "MockingJSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				576BD7E81A26F6F10046A99C /* Debug */,
+				576BD7E91A26F6F10046A99C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		576BD7EA1A26F6F10046A99C /* Build configuration list for PBXLegacyTarget "MockingJSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				576BD7EB1A26F6F10046A99C /* Debug */,
+				576BD7EC1A26F6F10046A99C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 576BD7E31A26F6F10046A99C /* Project object */;
+}

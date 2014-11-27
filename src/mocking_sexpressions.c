@@ -18,9 +18,9 @@
 
 atom *atom_from_json_token(jsmntok_t token,  const char* json_string) {
     char * valueBuff = malloc(token.end - token.start);
-    strncpy(valueBuff, json_string + token.start, token.end - token.start);
+    strlcpy(valueBuff, json_string + token.start, token.end - token.start+1);
     atom *atom = NULL;
-    printf("PROCESSING ATOM %s\n", valueBuff);
+//    printf("PROCESSING ATOM %s length %d\n", valueBuff, token.end - token.start);
     
     char* p = valueBuff;
     double val;
@@ -62,9 +62,9 @@ void *sexpression_from_json_token(jsmntok_t t[1024], const char* json_string, in
     if (token.type == JSMN_ARRAY) {
         *json_element_size = token.size;
         
-        char * valueBuff = malloc(token.end - token.start);
-        strncpy(valueBuff, json_string + token.start, token.end - token.start);
-        printf("PROCESSING array %s  \n", valueBuff);
+//        char * valueBuff = malloc(token.end - token.start+1);
+//        strlcpy(valueBuff, json_string + token.start, token.end - token.start+1);
+//        printf("PROCESSING array %s  \n", valueBuff);
 
         int j = 1;
         int child_elements_size =0;

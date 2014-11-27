@@ -26,22 +26,51 @@ CFLAGS_RELEASE := -O2 \
     -ftree-vectorize
 
 
+
+
+
+LIB_TAP = ./tests/libs/libtap
+LIB_JSMN = ./libs/jsmn
+
+.PHONY: $(LIB_JSMN) $(LIB_TAP)
+$(LIB_JSMN):
+	@$(MAKE) -C $@;
+
+$(LIB_TAP):
+	@$(MAKE) -C $@;
+
+
 INCLUDEDIRS := \
-	./libs/jsmn
+	$(LIB_JSMN) \
+	./src
 
 CFLAGS += $(addprefix -I, $(INCLUDEDIRS))
 
-OUTPUT_LIBRARY = libmockingjson.a
 SOURCES = $(wildcard src/*.c)
-SOURCES += libs/jsmn/jsmn.c
+SOURCES += ./libs/jsmn/jsmn.c
 OBJECTS = $(SOURCES:.c=.o)
+
+TEST_SOURCES = $(wildcard tests/*.c)
+TEST_OBJECTS = $(TEST_SOURCES:.c=.o)
+TEST_EXEC = runmockingjsontests.out
+TEST_INCLUDEDIRS := \
+	$(LIB_TAP)
+TEST_CFLAGS = $(addprefix -I, $(TEST_INCLUDEDIRS)) 
+OUTPUT_LIBRARY = libmockingjson.a
 
 # Main target
 $(OUTPUT_LIBRARY): $(OBJECTS)
 	ar r $(OUTPUT_LIBRARY) $(OBJECTS)
 
+$(TEST_EXEC): CFLAGS += $(TEST_CFLAGS)
+$(TEST_EXEC): $(OUTPUT_LIBRARY) $(TEST_OBJECTS) $(LIB_TAP)
+	$(CC) $(TEST_OBJECTS) -o $(TEST_EXEC) \
+	-ltap -L$(LIB_TAP) \
+	-lmockingjson -L./
 
-# 	$(CC) $(OBJECTS) -o $(OUTPUT_LIBRARY)
+
+test: $(TEST_EXEC)
+	./$(TEST_EXEC)
 
 
 # To obtain object files
@@ -50,7 +79,7 @@ $(OUTPUT_LIBRARY): $(OBJECTS)
 
 # To remove generated files
 clean:
-	rm -f $(OUTPUT_LIBRARY) $(OBJECTS)
+	rm -f $(OUTPUT_LIBRARY) $(OBJECTS) $(TEST_OBJECTS) $(TEST_EXEC)
 
 
 # the default target is debug
@@ -68,4 +97,5 @@ release: $(OUTPUT_LIBRARY)
 
 
 
-.PHONY: debug release
+.PHONY: debug release test clean all
+.DEFAULT_GOAL := all

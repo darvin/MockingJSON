@@ -11,6 +11,9 @@
 
 #include <stdio.h>
 
+#include "mocking_conscell.h"
+#include "mocking_sexpressions.h"
+
 
 void *mocking_json_run(const char *prog);
 void *mocking_json_run_filename(const char *filename);
