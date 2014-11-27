@@ -14,7 +14,6 @@ CFLAGS ?= -Wall \
     -Wstrict-aliasing=2 -Wstrict-overflow=5 -Wconversion \
     -Wno-unused-parameter \
     -pedantic -std=c99 \
-    -Wnosign-conversion -Wnoint-to-void-pointer-cast
     
 
 CFLAGS_DEBUG := -g3 \
