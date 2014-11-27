@@ -15,5 +15,5 @@ void *mocking_json_run(const char *prog) {
 
 void *mocking_json_run_filename(const char *filename) {
     int result = 233;
-    return (void*)result;
+    return (void *)result;
 }

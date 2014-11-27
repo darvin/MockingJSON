@@ -33,7 +33,7 @@ atom *atom_from_json_token(jsmntok_t token,  const char* json_string) {
             val = strtod(valueBuff, &p);
             if (errno != 0 || valueBuff == p || *p != 0) {
                 atom = atom_new_nil();
-            } else if ((double)val==val) {
+            } else if (floorf(val)==val) {
                 long longValue = (long)val;
                 atom = atom_new(&longValue, atomLong);
                 
