@@ -56,3 +56,7 @@ bool mocking_test_filename(const char *filename) {
     void *result = mocking_json_run_filename(filename);
     return is_result_equal_to_expected_from_filename(result, filename);
 }
+
+
+
+
