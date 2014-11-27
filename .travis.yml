@@ -1,8 +1,8 @@
-language: ruby
+language: c
 script: make && make test
-# compiler:
-#   - clang
-#   - gcc
+compiler:
+  - clang
+  - gcc
 os:
   - linux
   - osx
