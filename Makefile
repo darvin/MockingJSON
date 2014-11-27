@@ -67,7 +67,8 @@ $(TEST_EXEC): CFLAGS += $(TEST_CFLAGS)
 $(TEST_EXEC): $(OUTPUT_LIBRARY) $(TEST_OBJECTS) $(LIB_TAP)
 	$(CC) $(TEST_OBJECTS) -o $(TEST_EXEC) \
 	-ltap -L$(LIB_TAP) \
-	-lmockingjson -L./
+	-lmockingjson -L./ \
+	-lm
 
 
 test: $(TEST_EXEC)
