@@ -99,8 +99,8 @@ TEST(SExpressionsSanity)
     
 END_TEST
 
-/*
-TEST(SExpressionsParsingHashExtension)
+
+XTEST(SExpressionsParsingHashExtension)
     conscell *initial = sexpression_from_json_string("[4, {\"key\":\"value\", 5:9}, 6]");
     const char *exprRev = sexpression_to_json_string(initial);
     is(exprRev, "[4, [[\"key\", \"value\"], [5, 9]], 6]", "hash should be properly readed");
@@ -108,7 +108,7 @@ TEST(SExpressionsParsingHashExtension)
 
 
 END_TEST
-*/
+
 
 
 END_TEST_CASE
