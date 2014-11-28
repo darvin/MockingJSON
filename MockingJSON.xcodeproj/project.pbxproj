@@ -12,9 +12,7 @@
 		571E9BAA1A27051300E56E94 /* mocking_json.c in Sources */ = {isa = PBXBuildFile; fileRef = 571E9B5F1A27051300E56E94 /* mocking_json.c */; };
 		571E9BAC1A27051300E56E94 /* mocking_sexpressions.c in Sources */ = {isa = PBXBuildFile; fileRef = 571E9B621A27051300E56E94 /* mocking_sexpressions.c */; };
 		571E9BC51A27051300E56E94 /* tap.c in Sources */ = {isa = PBXBuildFile; fileRef = 571E9B911A27051300E56E94 /* tap.c */; };
-		571E9BC71A27051300E56E94 /* mocking_tests.c in Sources */ = {isa = PBXBuildFile; fileRef = 571E9B941A27051300E56E94 /* mocking_tests.c */; };
-		571E9BCE1A2705FE00E56E94 /* test_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 571E9B9C1A27051300E56E94 /* test_parser.c */; };
-		571E9BCF1A2705FE00E56E94 /* test_progs.c in Sources */ = {isa = PBXBuildFile; fileRef = 571E9B9E1A27051300E56E94 /* test_progs.c */; };
+		571E9BC71A27051300E56E94 /* mocking_tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 571E9B941A27051300E56E94 /* mocking_tests.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,12 +39,12 @@
 		571E9B631A27051300E56E94 /* mocking_sexpressions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mocking_sexpressions.h; sourceTree = "<group>"; };
 		571E9B911A27051300E56E94 /* tap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tap.c; sourceTree = "<group>"; };
 		571E9B921A27051300E56E94 /* tap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tap.h; sourceTree = "<group>"; };
-		571E9B941A27051300E56E94 /* mocking_tests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mocking_tests.c; sourceTree = "<group>"; };
+		571E9B941A27051300E56E94 /* mocking_tests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mocking_tests.cpp; sourceTree = "<group>"; };
 		571E9B971A27051300E56E94 /* mocking_tests_helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mocking_tests_helper.h; sourceTree = "<group>"; };
 		571E9B9A1A27051300E56E94 /* !hello_world=(void*)NULL.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "!hello_world=(void*)NULL.json"; sourceTree = "<group>"; };
 		571E9B9B1A27051300E56E94 /* fibbonacci=(int)233.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "fibbonacci=(int)233.json"; sourceTree = "<group>"; };
-		571E9B9C1A27051300E56E94 /* test_parser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test_parser.c; sourceTree = "<group>"; };
-		571E9B9E1A27051300E56E94 /* test_progs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test_progs.c; sourceTree = "<group>"; };
+		571E9B9C1A27051300E56E94 /* test_parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test_parser.cpp; sourceTree = "<group>"; };
+		571E9B9E1A27051300E56E94 /* test_progs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test_progs.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,11 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				571E9B661A27051300E56E94 /* libs */,
-				571E9B941A27051300E56E94 /* mocking_tests.c */,
+				571E9B941A27051300E56E94 /* mocking_tests.cpp */,
 				571E9B971A27051300E56E94 /* mocking_tests_helper.h */,
 				571E9B991A27051300E56E94 /* progs */,
-				571E9B9C1A27051300E56E94 /* test_parser.c */,
-				571E9B9E1A27051300E56E94 /* test_progs.c */,
+				571E9B9C1A27051300E56E94 /* test_parser.cpp */,
+				571E9B9E1A27051300E56E94 /* test_progs.cpp */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -225,13 +223,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				571E9BAA1A27051300E56E94 /* mocking_json.c in Sources */,
-				571E9BC71A27051300E56E94 /* mocking_tests.c in Sources */,
+				571E9BC71A27051300E56E94 /* mocking_tests.cpp in Sources */,
 				571E9BA21A27051300E56E94 /* jsmn.c in Sources */,
 				571E9BC51A27051300E56E94 /* tap.c in Sources */,
-				571E9BCE1A2705FE00E56E94 /* test_parser.c in Sources */,
 				571E9BA81A27051300E56E94 /* mocking_conscell.c in Sources */,
 				571E9BAC1A27051300E56E94 /* mocking_sexpressions.c in Sources */,
-				571E9BCF1A2705FE00E56E94 /* test_progs.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +367,7 @@
 				571E9B4D1A2704D900E56E94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		576BD7E61A26F6F10046A99C /* Build configuration list for PBXProject "MockingJSON" */ = {
 			isa = XCConfigurationList;

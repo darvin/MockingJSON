@@ -11,7 +11,7 @@
 TEST_CASE(parser)
 
     
-TEST(SExpressionsParsing) {
+TEST(SExpressionsParsing)
     conscell *initial = sexpression_from_json_string("[1, 2, [3, 4], 5]");
     conscell *c = initial;
     ok(conscell_car_is_atom(c)&&((atom*)conscell_car(c))->longValue==1, "first item should be correct");
@@ -19,7 +19,7 @@ TEST(SExpressionsParsing) {
     ok(conscell_car_is_atom(c)&&((atom*)conscell_car(c))->longValue==2, "second item should be correct");
     c = conscell_cdr(c);
     ok(!conscell_car_is_atom(c), "third item should be correct");
-    conscell *internal = conscell_car(c);
+    conscell *internal = (conscell*)conscell_car(c);
     c = conscell_cdr(c);
     
     ok(conscell_car_is_atom(internal)&&((atom*)conscell_car(internal))->longValue==3, "first item of internal should be correct");
@@ -45,17 +45,18 @@ TEST(SExpressionsParsing) {
     conscell_destroy(initial2);
 
     
-}
+END_TEST
 
 
-TEST(SExpressionsParsingNULL) {
+
+TEST(SExpressionsParsingNULL)
     conscell *initial = sexpression_from_json_string("[null, 5]");
     conscell *c = initial;
     ok(((atom*)conscell_car(c))->type==atomNil, "something", "first item should be correct");
     conscell_destroy(initial);
-}
+END_TEST
 
-TEST(SExpressionsParsingBadJSONStrings) {
+TEST(SExpressionsParsingBadJSONStrings)
     conscell *initial = sexpression_from_json_string("[something, \"another\", 4, another2, 5]");
     conscell *c = initial;
     is(((atom*)conscell_car(c))->stringValue, "something", "first item should be correct");
@@ -69,10 +70,11 @@ TEST(SExpressionsParsingBadJSONStrings) {
     c = conscell_cdr(c);
     ok(((atom*)conscell_car(c))->longValue==5, "4th item should be correct");
     conscell_destroy(initial);
-}
+END_TEST
 
 
-TEST(SExpressionsSanity) {
+
+TEST(SExpressionsSanity)
     int maxExpr = 9;
     const char * expessions[] = {
         "[1, 2]",
@@ -95,7 +97,18 @@ TEST(SExpressionsSanity) {
         conscell_destroy(c);
     }
     
-}
+END_TEST
+
+/*
+TEST(SExpressionsParsingHashExtension)
+    conscell *initial = sexpression_from_json_string("[4, {\"key\":\"value\", 5:9}, 6]");
+    const char *exprRev = sexpression_to_json_string(initial);
+    is(exprRev, "[4, [[\"key\", \"value\"], [5, 9]], 6]", "hash should be properly readed");
+    conscell_destroy(initial);
+
+
+END_TEST
+*/
 
 
 END_TEST_CASE

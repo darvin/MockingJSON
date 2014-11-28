@@ -1,6 +1,6 @@
 # if $CC is not set, use gcc as a sensible default
 CC ?= gcc
-
+CXX ?= g++
 
 # if $CFLAGS is not set, be very pedantic and compile
 # as C11, that should catch some common errors, also
@@ -48,10 +48,10 @@ CFLAGS += $(addprefix -I, $(INCLUDEDIRS))
 
 SOURCES = $(wildcard src/*.c)
 SOURCES += ./libs/jsmn/jsmn.c
-OBJECTS = $(SOURCES:.c=.o)
+OBJECTS = $(SOURCES:.c=.o) 
 
-TEST_SOURCES = $(wildcard tests/*.c)
-TEST_OBJECTS = $(TEST_SOURCES:.c=.o)
+TEST_SOURCES = tests/mocking_tests.cpp
+TEST_OBJECTS = $(TEST_SOURCES:.cpp=.o)
 TEST_EXEC = runmockingjsontests.out
 TEST_INCLUDEDIRS := \
 	$(LIB_TAP)
@@ -63,8 +63,9 @@ $(OUTPUT_LIBRARY): $(OBJECTS)
 	ar r $(OUTPUT_LIBRARY) $(OBJECTS)
 
 $(TEST_EXEC): CFLAGS += $(TEST_CFLAGS)
+$(TEST_EXEC): CXXFLAGS = $(CFLAGS)
 $(TEST_EXEC): $(OUTPUT_LIBRARY) $(TEST_OBJECTS) $(LIB_TAP)
-	$(CC) $(TEST_OBJECTS) -o $(TEST_EXEC) \
+	$(CXX) $(TEST_OBJECTS) -o $(TEST_EXEC) \
 	-ltap -L$(LIB_TAP) \
 	-lmockingjson -L./ \
 	-lm

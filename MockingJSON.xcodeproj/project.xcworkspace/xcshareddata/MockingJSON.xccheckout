@@ -22,7 +22,7 @@
 		<key>2EC9ADE4315A8A78BB54B8B9F91DE7D44F99A586</key>
 		<string>../..</string>
 		<key>B656FF743090515B3C31F5B0437AF3375B71979F</key>
-		<string>../..tests/libs/libtap/</string>
+		<string>../..tests/libs/libtap</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:darvin/MockingJSON.git</string>
