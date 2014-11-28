@@ -13,7 +13,7 @@ CFLAGS ?= -Wall \
     -Wdisabled-optimization -Wshadow -Wmissing-braces \
     -Wstrict-aliasing=2 -Wstrict-overflow=5 -Wconversion \
     -Wno-unused-parameter \
-    -pedantic -std=c99 \
+    -std=c99 \
     
 
 CFLAGS_DEBUG := -g3 \
