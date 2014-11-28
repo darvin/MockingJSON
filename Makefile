@@ -13,7 +13,7 @@ CFLAGS ?= -Wall \
     -Wdisabled-optimization -Wshadow -Wmissing-braces \
     -Wstrict-aliasing=2 -Wstrict-overflow=5 -Wconversion \
     -Wno-unused-parameter \
-    -std=c99 \
+    -pedantic -std=c99 \
     
 
 CFLAGS_DEBUG := -g3 \
@@ -44,7 +44,7 @@ INCLUDEDIRS := \
 	$(LIB_JSMN) \
 	./src
 
-CFLAGS += $(addprefix -I, $(INCLUDEDIRS))
+LIBRARY_CFLAGS = $(addprefix -I, $(INCLUDEDIRS))
 
 SOURCES = $(wildcard src/*.c)
 SOURCES += ./libs/jsmn/jsmn.c
@@ -59,11 +59,11 @@ TEST_CFLAGS = $(addprefix -I, $(TEST_INCLUDEDIRS))
 OUTPUT_LIBRARY = libmockingjson.a
 
 # Main target
+$(OUTPUT_LIBRARY): CFLAGS += $(LIBRARY_CFLAGS)
 $(OUTPUT_LIBRARY): $(OBJECTS)
 	ar r $(OUTPUT_LIBRARY) $(OBJECTS)
 
-$(TEST_EXEC): CFLAGS += $(TEST_CFLAGS)
-$(TEST_EXEC): CXXFLAGS = $(CFLAGS)
+$(TEST_EXEC): CXXFLAGS += $(TEST_CFLAGS) $(LIBRARY_CFLAGS)
 $(TEST_EXEC): $(OUTPUT_LIBRARY) $(TEST_OBJECTS) $(LIB_TAP)
 	$(CXX) $(TEST_OBJECTS) -o $(TEST_EXEC) \
 	-ltap -L$(LIB_TAP) \
