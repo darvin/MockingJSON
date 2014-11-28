@@ -36,10 +36,14 @@ TEST(SExpressionsParsing) {
     ok(c==NULL, "c should have proper lenth");
     
     
-    conscell *c2 = sexpression_from_json_string("[1, [3, [335], 4], 6]");
+    conscell *initial2 = sexpression_from_json_string("[1, [3, [335], 4], 6]");
+    conscell *c2 = initial2;
     c2 = conscell_cdr(c2);
     c2 = conscell_cdr(c2);
     ok(conscell_car_is_atom(c2)&&((atom*)conscell_car(c2))->longValue==6, "last item should be correct");
+    conscell_destroy(initial);
+    conscell_destroy(initial2);
+
     
 }
 
@@ -48,6 +52,7 @@ TEST(SExpressionsParsingNULL) {
     conscell *initial = sexpression_from_json_string("[null, 5]");
     conscell *c = initial;
     ok(((atom*)conscell_car(c))->type==atomNil, "something", "first item should be correct");
+    conscell_destroy(initial);
 }
 
 TEST(SExpressionsParsingBadJSONStrings) {
@@ -63,7 +68,7 @@ TEST(SExpressionsParsingBadJSONStrings) {
     is(((atom*)conscell_car(c))->stringValue, "another2", "4th item should be correct");
     c = conscell_cdr(c);
     ok(((atom*)conscell_car(c))->longValue==5, "4th item should be correct");
-
+    conscell_destroy(initial);
 }
 
 
@@ -87,7 +92,7 @@ TEST(SExpressionsSanity) {
         const char *exprRev = sexpression_to_json_string(c);
         is(expr, exprRev, "Serialized expression have to be as deserialized");
         
-        
+        conscell_destroy(c);
     }
     
 }

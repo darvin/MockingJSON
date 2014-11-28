@@ -39,7 +39,9 @@ conscell *conscell_cdr(conscell* cell) {
 }
 
 void conscell_destroy(conscell* cell) {
-    conscell_destroy(cell->cdr);
+    if (cell->cdr!=NULL) {
+        conscell_destroy(cell->cdr);
+    }
     if (cell->car_atom==NULL) {
         conscell_destroy(cell->car_conscell);
     } else {
