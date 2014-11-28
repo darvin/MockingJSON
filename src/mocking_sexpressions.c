@@ -32,7 +32,13 @@ atom *atom_from_json_token(jsmntok_t token,  const char* json_string) {
             errno = 0;
             val = strtod(valueBuff, &p);
             if (errno != 0 || valueBuff == p || *p != 0) {
-                atom = atom_new_nil();
+                //this case its "primitive string", a unquoted string allowed by non-string mode of JSMN
+                //this is the case for unquoted "null" too
+                if (strcmp(valueBuff, "null")==0) {
+                    atom = atom_new_nil();
+                } else {
+                    atom = atom_new(valueBuff, atomString);   
+                }
             } else if (floorl(val)==val) {
                 long longValue = (long)val;
                 atom = atom_new(&longValue, atomLong);
@@ -43,7 +49,7 @@ atom *atom_from_json_token(jsmntok_t token,  const char* json_string) {
             }
             break;
         case JSMN_STRING:
-            return atom_new(valueBuff, atomString);
+            atom = atom_new(valueBuff, atomString);
             break;
             
         default:

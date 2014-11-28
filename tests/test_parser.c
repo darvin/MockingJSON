@@ -43,6 +43,30 @@ TEST(SExpressionsParsing) {
     
 }
 
+
+TEST(SExpressionsParsingNULL) {
+    conscell *initial = sexpression_from_json_string("[null, 5]");
+    conscell *c = initial;
+    ok(((atom*)conscell_car(c))->type==atomNil, "something", "first item should be correct");
+}
+
+TEST(SExpressionsParsingBadJSONStrings) {
+    conscell *initial = sexpression_from_json_string("[something, \"another\", 4, another2, 5]");
+    conscell *c = initial;
+    is(((atom*)conscell_car(c))->stringValue, "something", "first item should be correct");
+
+    c = conscell_cdr(c);
+    is(((atom*)conscell_car(c))->stringValue, "another", "2nd item should be correct");
+    c = conscell_cdr(c);
+    ok(((atom*)conscell_car(c))->longValue==4, "3rd item should be correct");
+    c = conscell_cdr(c);
+    is(((atom*)conscell_car(c))->stringValue, "another2", "4th item should be correct");
+    c = conscell_cdr(c);
+    ok(((atom*)conscell_car(c))->longValue==5, "4th item should be correct");
+
+}
+
+
 TEST(SExpressionsSanity) {
     int maxExpr = 9;
     const char * expessions[] = {
