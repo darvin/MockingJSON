@@ -15,6 +15,7 @@ CFLAGS ?= -Wall \
     -Wno-unused-parameter \
     -pedantic -std=c99 \
     
+CXXFLAGS ?= -fpermissive
 
 CFLAGS_DEBUG := -g3 \
     -O \
@@ -63,7 +64,7 @@ $(OUTPUT_LIBRARY): CFLAGS += $(LIBRARY_CFLAGS)
 $(OUTPUT_LIBRARY): $(OBJECTS)
 	ar r $(OUTPUT_LIBRARY) $(OBJECTS)
 
-$(TEST_EXEC): CXXFLAGS += $(TEST_CFLAGS) $(LIBRARY_CFLAGS)
+$(TEST_EXEC): CXXFLAGS += $(TEST_CFLAGS) $(LIBRARY_CFLAGS) 
 $(TEST_EXEC): $(OUTPUT_LIBRARY) $(TEST_OBJECTS) $(LIB_TAP)
 	$(CXX) $(TEST_OBJECTS) -o $(TEST_EXEC) \
 	-ltap -L$(LIB_TAP) \
