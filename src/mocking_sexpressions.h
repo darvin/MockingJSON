@@ -13,8 +13,8 @@
 
 #include "mocking_conscell.h"
 
-conscell *sexpression_from_json_string(const char* string);
-const char *sexpression_to_json_string(conscell *exp);
+cell *sexpression_from_json_string(const char* string);
+const char *sexpression_to_json_string(cell *exp);
 
 
 

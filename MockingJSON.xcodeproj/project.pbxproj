@@ -13,6 +13,7 @@
 		571E9BAC1A27051300E56E94 /* mocking_sexpressions.c in Sources */ = {isa = PBXBuildFile; fileRef = 571E9B621A27051300E56E94 /* mocking_sexpressions.c */; };
 		571E9BC51A27051300E56E94 /* tap.c in Sources */ = {isa = PBXBuildFile; fileRef = 571E9B911A27051300E56E94 /* tap.c */; };
 		571E9BC71A27051300E56E94 /* mocking_tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 571E9B941A27051300E56E94 /* mocking_tests.cpp */; };
+		57CBEB1F1A295DBD002238E2 /* test_vm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57CBEB1E1A295DBD002238E2 /* test_vm.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,9 @@
 		571E9B9B1A27051300E56E94 /* fibbonacci=(int)233.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "fibbonacci=(int)233.json"; sourceTree = "<group>"; };
 		571E9B9C1A27051300E56E94 /* test_parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test_parser.cpp; sourceTree = "<group>"; };
 		571E9B9E1A27051300E56E94 /* test_progs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test_progs.cpp; sourceTree = "<group>"; };
+		57CBEB1B1A295D93002238E2 /* mocking_vm.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mocking_vm.c; sourceTree = "<group>"; };
+		57CBEB1C1A295D93002238E2 /* mocking_vm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mocking_vm.h; sourceTree = "<group>"; };
+		57CBEB1E1A295DBD002238E2 /* test_vm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test_vm.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 				571E9B601A27051300E56E94 /* mocking_json.h */,
 				571E9B621A27051300E56E94 /* mocking_sexpressions.c */,
 				571E9B631A27051300E56E94 /* mocking_sexpressions.h */,
+				57CBEB1B1A295D93002238E2 /* mocking_vm.c */,
+				57CBEB1C1A295D93002238E2 /* mocking_vm.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -105,6 +111,7 @@
 				571E9B991A27051300E56E94 /* progs */,
 				571E9B9C1A27051300E56E94 /* test_parser.cpp */,
 				571E9B9E1A27051300E56E94 /* test_progs.cpp */,
+				57CBEB1E1A295DBD002238E2 /* test_vm.cpp */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -227,6 +234,7 @@
 				571E9BA21A27051300E56E94 /* jsmn.c in Sources */,
 				571E9BC51A27051300E56E94 /* tap.c in Sources */,
 				571E9BA81A27051300E56E94 /* mocking_conscell.c in Sources */,
+				57CBEB1F1A295DBD002238E2 /* test_vm.cpp in Sources */,
 				571E9BAC1A27051300E56E94 /* mocking_sexpressions.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
