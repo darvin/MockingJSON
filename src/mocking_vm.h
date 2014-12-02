@@ -13,35 +13,18 @@
 #include "mocking_conscell.h"
 
 
-typedef enum {
-    halt = 0,
-    refer,
-    constant,
-    test,
-    assign,
-    conti,
-    nuate,
-    frame,
-    argument,
-    apply
-} vm_op;
 
 typedef struct {
-    vm_op op;
-    cell args;
-} vm_expression;
-
-typedef struct {
-    void *acc;
-    vm_expression *next;
+    cellValue acc;
+    vm_expression next;
     cell *env;
-    void *rib;
+    cell *rib;
     struct call_frame *stack;
 } call_frame;
 
 
 
-void vm_run_frame(call_frame * frame);
+cellValue vm_run_frame(call_frame * frame);
 
 
 #endif /* defined(__MockingJSON__mocking_vm__) */

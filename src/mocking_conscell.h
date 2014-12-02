@@ -17,21 +17,49 @@ typedef enum {
     typeLong,
     typeDouble,
     typeString,
-    typeCell
+    typeCell,
+    typeExp
 } cellType;
 
+
+
+
+typedef enum {
+    halt = 0,
+    refer,
+    constant,
+    test,
+    assign,
+    conti,
+    nuate,
+    frame,
+    argument,
+    apply
+} vm_op;
+
+typedef struct vm_expression vm_expression;
+typedef struct cell cell;
+struct vm_expression{
+    vm_op op;
+    struct cell *args;
+};
 
 typedef union {
     double doubleValue;
     long longValue;
     char *stringValue;
     struct cell *cellValue;
+    vm_expression expValue;
 } cellValue;
+
+typedef struct {
+    cellValue value;
+    cellType type;
+} cellCar;
 
 typedef struct cell
 {
-    cellValue car;
-    cellType type;
+    cellCar car;
     struct cell* cdr;
 } cell;
 
@@ -39,6 +67,7 @@ cell *cell_cons(cellValue, cellType, cell*);
 cellValue cell_car_value(cell*);
 cellType cell_car_type(cell*);
 cell *cell_cdr(cell*);
+cellCar cell_car(cell *c);
 void cell_destroy(cell*);
 
 #endif /* defined(__MockingJSON__mocking_cell__) */

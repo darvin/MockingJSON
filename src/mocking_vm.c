@@ -12,45 +12,47 @@
 void vm_eval(call_frame *frame) {
 }
 
-void *vm_exp_arg(vm_expression *exp, int index) {
-    
-}
 
-void * vm_run_frame(call_frame *first_frame) {
-    call_frame *frame = first_frame;
+cellValue vm_run_frame(call_frame *first_frame) {
+    call_frame *f = first_frame;
     
-    while (frame->stack!=NULL) {
+    while (f->stack!=NULL) {
     
         while (true) {
-            vm_expression *exp = frame->next;
-            void * arg0 = vm_exp_arg(frame->next, 0);
-            void * arg1 = vm_exp_arg(frame->next, 1);
-            void * arg2 = vm_exp_arg(frame->next, 2);
-            void * arg3 = vm_exp_arg(frame->next, 3);
-            void * arg4 = vm_exp_arg(frame->next, 4);
-            switch (frame->next->op) {
+            vm_expression exp = f->next;
+            cellValue arg0, arg1, arg2, arg3;
+            cell *currArg = exp.args;
+            arg0 = cell_car_value(currArg);
+            currArg = cell_cdr(currArg);
+            arg1 = cell_car_value(currArg);
+            currArg = cell_cdr(currArg);
+            arg2 = cell_car_value(currArg);
+            currArg = cell_cdr(currArg);
+            arg3 = cell_car_value(currArg);
+            
+            switch (f->next.op) {
                 case halt:
-                    return frame->acc;
+                    return f->acc;
                     break;
                 case refer:
-                    frame->acc = vm_env_lookup(frame->env, (char *)arg0);
-                    frame->next = (vm_expression *)arg1;
+                    f->acc = vm_env_lookup(f->env, arg0.stringValue);
+                    f->next = arg1.expValue;
                     break;
                 case constant:
-                    frame->acc = vm_exp_arg(frame->next, 0);
-                    frame->next = vm_exp_arg(frame->next, 1);
+                    f->acc = arg0;
+                    f->next = arg1.expValue;
                     break;
 //                case close:
 //                    vm_closure closure = vm_closure_new()
                 case test:
-                    if (frame->acc) {
-                        frame->next = arg0;
+                    if (!f->acc.doubleValue!=0) { //fixme type info
+                        f->next = arg0.expValue;
                     } else {
-                        frame->next = arg1;
+                        f->next = arg1.expValue;
                     }
                     break;
                 case assign:
-                    frame->acc = vm_env_set(frame->env, (char *)arg0, frame->acc);
+                    vm_env_set(f->env, arg0.stringValue, f->acc);
                     frame->next = (vm_expression *)arg1;
                     break;
                 case conti:
