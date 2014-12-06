@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/darvin/MockingJSON.svg?branch=master)](https://travis-ci.org/darvin/MockingJSON)
 
 #MockingJSON
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/darvin/MockingJSON?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
 Tiny [Scheme](http://en.wikipedia.org/wiki/Scheme_(programming_language))/[Lisp](http://en.wikipedia.org/wiki/Lisp_(programming_language)) dialect, subset of [JSON](http://en.wikipedia.org/wiki/JSON)
