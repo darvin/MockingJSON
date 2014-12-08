@@ -12,9 +12,10 @@
 
 TEST_CASE(cells)
 
-cellValue first;
-first.longValue = 1;
-cell *initial = cell_list(3, make_cell_car(make_cell_value_long(1), typeLong), make_cell_car(make_cell_value_long(2), typeLong),make_cell_car(make_cell_value_long(5), typeLong));
+
+TEST(CellList)
+
+cell *initial = cell_list(3, vLong(1), vLong(2),  vLong(5));
 cell *c = initial;
 ok(cell_car_type(c)==typeLong&&cell_car_value(c).longValue==1, "first item should be correct");
 c = cell_cdr(c);
@@ -29,11 +30,28 @@ ok(c==NULL, "c should have proper lenth");
 
 cell_destroy(initial);
 
-TEST(CellList)
-
-
 END_TEST
 
+
+
+TEST(CellList)
+
+cell *initial = cell_list(3, vLong(1), vLong(2),  vLong(5));
+
+
+cellCar c1, c2, c3;
+
+cell_extract(initial, 3, &c1, &c2, &c3);
+
+ok(c1.type==typeLong&&c1.value.longValue==1, "first item should be correct");
+
+ok(c2.type==typeLong&&c2.value.longValue==2, "second item should be correct");
+ok(c3.type==typeLong&&c3.value.longValue==5, "last item should be correct");
+
+
+cell_destroy(initial);
+
+END_TEST
 
 
 END_TEST_CASE

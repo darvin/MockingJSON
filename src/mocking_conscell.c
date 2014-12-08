@@ -16,7 +16,8 @@
 
 cell *cell_cons(cellValue value, cellType type, cell* cdr) {
     cell *c = malloc(sizeof(cell));
-    c->car = make_cell_car(value, type);
+    c->car.value = value;
+    c->car.type = type;
     c->cdr = cdr;
     return c;
 }
@@ -27,12 +28,10 @@ cell * cell_list(int count, ...)
     va_list ap;
     int j;
     cell * result = NULL;
-    printf("LIST %d\n", count);
 
     va_start(ap, count);
     for (j = 0; j < count; j++) {
         cellCar car = va_arg(ap, cellCar);
-        printf("LIST %ld\n", car.value.longValue);
         result = cell_cons(car.value, car.type, result);
     }
     va_end(ap);
@@ -42,9 +41,27 @@ cell * cell_list(int count, ...)
     do {
         reversed_cell = cell_cons(cell_car_value(curr), cell_car_type(curr), reversed_cell);
     } while (((curr = cell_cdr(curr))));
+    
+//    cell_destroy(result);
     return reversed_cell;
+}
+
+void cell_extract(cell *c, int count, ...) {
+    va_list ap;
+    int j;
+    cell *curr = c;
+    
+    va_start(ap, count);
+    for (j = 0; j < count; j++) {
+        cellCar *car = va_arg(ap, cellCar*);
+        *car = cell_car(curr);
+        
+        curr = cell_cdr(curr);
+    }
+    va_end(ap);
 
 }
+
 
 cellValue cell_car_value(cell* c) {
     return c->car.value;
@@ -78,9 +95,72 @@ void cell_car_destroy(cellCar car) {
 
 }
 
+bool cell_is_symbol(cell * cell) {
+    return cell_cdr(cell) == NULL && cell_car_type(cell)==typeString;
+}
+bool cell_is_pair(cell * cell) {
+    return cell_cdr(cell) != NULL;
+}
+
 void cell_destroy(cell* cell) {
     if (cell->cdr!=NULL) {
         cell_destroy(cell->cdr);
     }
     cell_car_destroy(cell->car);
 }
+
+
+
+
+
+const char *make_string_from_op(vm_op op){
+    switch (op) {
+        case refer: return "refer";
+        case constant: return "constant";
+        case test: return "test";
+        case assign: return "assign";
+        case conti: return "conti";
+        case nuate: return "nuate";
+        case frame: return "frame";
+        case argument: return "argument";
+        case apply: return "apply";
+        case closure: return "closure";
+        case ret: return "ret";
+        case halt: return "halt";
+        default: return "no-op";
+    }
+}
+
+
+
+cellCar vLong(long v) {
+    cellCar car;
+    car.value.longValue = v;
+    car.type = typeLong;
+    return car;
+}
+
+cellCar vOp(vm_op v) {
+    cellCar car;
+    car.value.opValue = v;
+    car.type = typeOp;
+    return car;
+}
+
+
+
+
+cellCar vCell(cell* v) {
+    cellCar car;
+    car.value.cellValue = v;
+    car.type = typeCell;
+    return car;
+}
+
+cellCar vStr(const char *str) {
+    cellCar car;
+    car.value.stringValue = (char *)str;
+    car.type = typeString;
+    return car;
+}
+

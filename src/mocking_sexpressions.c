@@ -169,6 +169,10 @@ const char *sexpression_to_json_string(cell *exp) {
                 free((void *)resChild);
 
                 break;
+            case typeOp:
+                sprintf(res+strlen(res), "<%s>", make_string_from_op(value.opValue));
+                break;
+
             default:
                 break;
         }

@@ -18,7 +18,8 @@ typedef enum {
     typeDouble,
     typeString,
     typeCell,
-    typeExp
+    typeExp,
+    typeOp
 } cellType;
 
 
@@ -34,8 +35,12 @@ typedef enum {
     nuate,
     frame,
     argument,
-    apply
+    closure,
+    apply,
+    ret
 } vm_op;
+
+const char *make_string_from_op(vm_op op);
 
 typedef struct vm_expression vm_expression;
 typedef struct cell cell;
@@ -50,6 +55,7 @@ typedef union {
     char *stringValue;
     struct cell *cellValue;
     vm_expression expValue;
+    vm_op opValue;
 } cellValue;
 
 typedef struct {
@@ -64,23 +70,22 @@ typedef struct cell
 } cell;
 
 cell *cell_cons(cellValue, cellType, cell*);
-cell * cell_list(int count, ...);
+cell *cell_list(int count, ...);
+void cell_extract(cell *, int count, ...);
+
 cellValue cell_car_value(cell*);
 cellType cell_car_type(cell*);
 
-inline cellCar make_cell_car(cellValue value, cellType type) {
-    cellCar car;
-    car.value = value;
-    car.type = type;
-    return car;
-}
+cellCar vLong(long);
 
-inline cellValue make_cell_value_long(long v) {
-    cellValue r;
-    r.longValue = v;
-    return r;
-}
+cellCar vOp(vm_op);
 
+cellCar vCell(cell* );
+
+cellCar vStr(const char*);
+
+bool cell_is_symbol(cell *);
+bool cell_is_pair(cell *);
 
 cell *cell_cdr(cell*);
 cellCar cell_car(cell *c);

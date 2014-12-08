@@ -220,11 +220,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/mocking_conscell.c"
-            timestampString = "439678899.768196"
+            timestampString = "439720622.881021"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "cell_car_type()"
             landmarkType = "7">
          </BreakpointContent>
@@ -235,24 +235,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "tests/test_cells.cpp"
-            timestampString = "439678734.226641"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "ok(cell_car_type(c)==typeLong&amp;&amp;cell_car_value(c).longValue==1, &quot;first item should be correct&quot;)"
-            landmarkType = "6">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "src/mocking_conscell.c"
-            timestampString = "439678899.768196"
+            timestampString = "439720622.881021"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -267,28 +251,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "tests/test_cells.cpp"
-            timestampString = "439678734.226641"
+            filePath = "tests/test_compiler.cpp"
+            timestampString = "439720190.183185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "ok(cell_car_type(c)==typeLong&amp;&amp;cell_car_value(c).longValue==1, &quot;first item should be correct&quot;)"
-            landmarkType = "6">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "tests/test_cells.cpp"
-            timestampString = "439678734.226641"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17">
+            startingLineNumber = "25"
+            endingLineNumber = "25">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
