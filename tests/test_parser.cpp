@@ -35,14 +35,14 @@ TEST(SExpressionsParsing)
     c = cell_cdr(c);
     ok(c==NULL, "c should have proper lenth");
     
-    
+    cell_destroy(initial);
+
     cell *initial2 = sexpression_from_json_string("[1, [3, [335], 4], 6]");
     cell *c2 = initial2;
 
     c2 = cell_cdr(c2);
     c2 = cell_cdr(c2);
     ok(cell_car_type(c2)==typeLong&&cell_car_value(c2).longValue==6, "last item should be correct");
-    cell_destroy(initial);
     cell_destroy(initial2);
 
     

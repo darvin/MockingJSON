@@ -13,18 +13,18 @@
 #include "mocking_conscell.h"
 
 
-
-typedef struct {
-    cellValue acc;
+typedef struct call_frame call_frame;
+struct call_frame{
+    cellCar acc;
     vm_expression next;
     cell *env;
     cell *rib;
-    struct call_frame *stack;
-} call_frame;
+    call_frame *stack;
+};
 
 
 
-cellValue vm_run_frame(call_frame * frame);
+cellCar vm_run_frame(call_frame *);
 
 
 #endif /* defined(__MockingJSON__mocking_vm__) */

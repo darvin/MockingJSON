@@ -17,7 +17,8 @@ extern "C" {
 
 #include "mocking_conscell.h"
 #include "mocking_sexpressions.h"
-
+#include "mocking_vm.h"
+#include "mocking_compiler.h"
 
 void *mocking_json_run(const char *prog);
 void *mocking_json_run_filename(const char *filename);

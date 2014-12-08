@@ -64,8 +64,24 @@ typedef struct cell
 } cell;
 
 cell *cell_cons(cellValue, cellType, cell*);
+cell * cell_list(int count, ...);
 cellValue cell_car_value(cell*);
 cellType cell_car_type(cell*);
+
+inline cellCar make_cell_car(cellValue value, cellType type) {
+    cellCar car;
+    car.value = value;
+    car.type = type;
+    return car;
+}
+
+inline cellValue make_cell_value_long(long v) {
+    cellValue r;
+    r.longValue = v;
+    return r;
+}
+
+
 cell *cell_cdr(cell*);
 cellCar cell_car(cell *c);
 void cell_destroy(cell*);

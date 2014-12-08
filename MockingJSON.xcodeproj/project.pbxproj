@@ -13,6 +13,8 @@
 		571E9BAC1A27051300E56E94 /* mocking_sexpressions.c in Sources */ = {isa = PBXBuildFile; fileRef = 571E9B621A27051300E56E94 /* mocking_sexpressions.c */; };
 		571E9BC51A27051300E56E94 /* tap.c in Sources */ = {isa = PBXBuildFile; fileRef = 571E9B911A27051300E56E94 /* tap.c */; };
 		571E9BC71A27051300E56E94 /* mocking_tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 571E9B941A27051300E56E94 /* mocking_tests.cpp */; };
+		574F38C01A34E1E3001DA935 /* mocking_compiler.c in Sources */ = {isa = PBXBuildFile; fileRef = 574F38BE1A34E1E3001DA935 /* mocking_compiler.c */; };
+		57C1910F1A2DA25F0056BDD2 /* mocking_vm.c in Sources */ = {isa = PBXBuildFile; fileRef = 57CBEB1B1A295D93002238E2 /* mocking_vm.c */; };
 		57CBEB1F1A295DBD002238E2 /* test_vm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57CBEB1E1A295DBD002238E2 /* test_vm.cpp */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,11 @@
 		571E9B9B1A27051300E56E94 /* fibbonacci=(int)233.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "fibbonacci=(int)233.json"; sourceTree = "<group>"; };
 		571E9B9C1A27051300E56E94 /* test_parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test_parser.cpp; sourceTree = "<group>"; };
 		571E9B9E1A27051300E56E94 /* test_progs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test_progs.cpp; sourceTree = "<group>"; };
+		574F38BE1A34E1E3001DA935 /* mocking_compiler.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mocking_compiler.c; sourceTree = "<group>"; };
+		574F38BF1A34E1E3001DA935 /* mocking_compiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mocking_compiler.h; sourceTree = "<group>"; };
+		574F38C11A34E286001DA935 /* test_compiler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = test_compiler.cpp; sourceTree = "<group>"; };
+		574F38C21A34E51F001DA935 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		57C4BF1C1A34EA0C000982B7 /* test_cells.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = test_cells.cpp; sourceTree = "<group>"; };
 		57CBEB1B1A295D93002238E2 /* mocking_vm.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mocking_vm.c; sourceTree = "<group>"; };
 		57CBEB1C1A295D93002238E2 /* mocking_vm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mocking_vm.h; sourceTree = "<group>"; };
 		57CBEB1E1A295DBD002238E2 /* test_vm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test_vm.cpp; sourceTree = "<group>"; };
@@ -98,6 +105,8 @@
 				571E9B631A27051300E56E94 /* mocking_sexpressions.h */,
 				57CBEB1B1A295D93002238E2 /* mocking_vm.c */,
 				57CBEB1C1A295D93002238E2 /* mocking_vm.h */,
+				574F38BE1A34E1E3001DA935 /* mocking_compiler.c */,
+				574F38BF1A34E1E3001DA935 /* mocking_compiler.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -112,6 +121,8 @@
 				571E9B9C1A27051300E56E94 /* test_parser.cpp */,
 				571E9B9E1A27051300E56E94 /* test_progs.cpp */,
 				57CBEB1E1A295DBD002238E2 /* test_vm.cpp */,
+				574F38C11A34E286001DA935 /* test_compiler.cpp */,
+				57C4BF1C1A34EA0C000982B7 /* test_cells.cpp */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -145,6 +156,7 @@
 		576BD7E21A26F6F10046A99C = {
 			isa = PBXGroup;
 			children = (
+				574F38C21A34E51F001DA935 /* Makefile */,
 				571E9B4E1A27051300E56E94 /* libs */,
 				571E9B5B1A27051300E56E94 /* src */,
 				571E9B651A27051300E56E94 /* tests */,
@@ -236,6 +248,8 @@
 				571E9BA81A27051300E56E94 /* mocking_conscell.c in Sources */,
 				57CBEB1F1A295DBD002238E2 /* test_vm.cpp in Sources */,
 				571E9BAC1A27051300E56E94 /* mocking_sexpressions.c in Sources */,
+				574F38C01A34E1E3001DA935 /* mocking_compiler.c in Sources */,
+				57C1910F1A2DA25F0056BDD2 /* mocking_vm.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
