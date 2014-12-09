@@ -131,6 +131,22 @@ const char *make_string_from_op(vm_op op){
     }
 }
 
+vm_op make_op_from_string(const char *string) {
+    if (strcmp("refer", string)==0) return refer;
+    if (strcmp("constant", string)==0) return constant;
+    if (strcmp("test", string)==0) return test;
+    if (strcmp("assign", string)==0) return assign;
+    if (strcmp("conti", string)==0) return conti;
+    if (strcmp("nuate", string)==0) return nuate;
+    if (strcmp("frame", string)==0) return frame;
+    if (strcmp("argument", string)==0) return argument;
+    if (strcmp("apply", string)==0) return apply;
+    if (strcmp("closure", string)==0) return closure;
+    if (strcmp("halt", string)==0) return halt;
+    if (strcmp("ret", string)==0) return ret;
+    return -1;
+}
+
 
 
 cellCar vLong(long v) {

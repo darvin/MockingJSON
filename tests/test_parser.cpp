@@ -112,4 +112,23 @@ END_TEST
 
 
 
+TEST(SExpressionsVMOpParsing)
+cell *initial = sexpression_from_json_string("[<constant>, 2, \"<refer>\"]");
+cell *c = initial;
+ok(cell_car_type(c)==typeOp&&cell_car_value(c).opValue==constant, "first item should be correct");
+c = cell_cdr(c);
+ok(cell_car_type(c)==typeLong&&cell_car_value(c).longValue==2, "second item should be correct");
+c = cell_cdr(c);
+ok(cell_car_type(c)==typeOp&&cell_car_value(c).opValue==refer, "last item should be correct");
+
+c = cell_cdr(c);
+ok(c==NULL, "c should have proper lenth");
+
+cell_destroy(initial);
+
+END_TEST
+
+
+
+
 END_TEST_CASE

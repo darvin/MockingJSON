@@ -41,6 +41,7 @@ typedef enum {
 } vm_op;
 
 const char *make_string_from_op(vm_op op);
+vm_op make_op_from_string(const char *string);
 
 typedef struct vm_expression vm_expression;
 typedef struct cell cell;

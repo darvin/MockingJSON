@@ -28,7 +28,7 @@ TEST_CASE(vm)
 TEST(quoteExp)
 cell *prog = sexpression_from_json_string("[quote 4]");
 cell *compiledProg = compile_code_to_vm(prog);
-
+//cell *result = vm_run_frame(<#call_frame *#>)
 
 END_TEST
 

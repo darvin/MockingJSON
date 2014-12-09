@@ -16,6 +16,25 @@
 #include "jsmn.h"
 
 
+void _create_value_from_str(char * valueBuff, cellValue *result, cellType *type) {
+    if (valueBuff[0]=='<' && valueBuff[strlen(valueBuff)=='>']) {
+        char *opName = malloc(strlen(valueBuff)-1);
+        strncpy(opName, valueBuff+1, strlen(valueBuff)-2);
+        opName[strlen(valueBuff)-2] = '\0';
+        result->opValue = make_op_from_string(opName);
+        *type = typeOp;
+
+        free(opName);
+    } else {
+        result->stringValue = malloc(strlen(valueBuff)+1);
+        strncpy(result->stringValue, valueBuff, strlen(valueBuff));
+        result->stringValue[strlen(valueBuff)] = '\0';
+        *type = typeString;
+ 
+    }
+
+}
+
 cellValue atom_from_json_token(jsmntok_t token,  const char* json_string, cellType *type) {
     size_t valueSize = token.end - token.start;
     char * valueBuff = malloc(valueSize +1);
@@ -37,10 +56,7 @@ cellValue atom_from_json_token(jsmntok_t token,  const char* json_string, cellTy
                 if (strcmp(valueBuff, "null")==0) {
                     *type = typeNil;
                 } else {
-                    result.stringValue = malloc(strlen(valueBuff)+1);
-                    strncpy(result.stringValue, valueBuff, strlen(valueBuff));
-                    result.stringValue[strlen(valueBuff)] = '\0';
-                    *type = typeString;
+                    _create_value_from_str(valueBuff, &result, type);
                 }
             } else if (floorl(val)==val) {
                 result.longValue = (long)val;
@@ -53,10 +69,8 @@ cellValue atom_from_json_token(jsmntok_t token,  const char* json_string, cellTy
             }
             break;
         case JSMN_STRING:
-            result.stringValue = malloc(strlen(valueBuff)+1);
-            strncpy(result.stringValue, valueBuff, strlen(valueBuff));
-            result.stringValue[strlen(valueBuff)] = '\0';
-            *type = typeString;
+            _create_value_from_str(valueBuff, &result, type);
+
             break;
             
         default:
